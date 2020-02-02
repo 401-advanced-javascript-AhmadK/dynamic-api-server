@@ -14,19 +14,17 @@ describe('Products API', () => {
 
       });
   });
-
-  // it('post a new product item', () => {
-  //   let testObj = { categoryName:'food',name: 'apple', price: 25, quantityInStock: 200 };
-  //   return mockRequest.post('/api/v1/products')
-  //     .send(testObj)
-  //     .then(data => {
-  //       let record = data.body;
-  //       Object.keys(testObj).forEach(key => {
-  //         expect(record[key]).toEqual(testObj[key]);
-  //       });
-  //     });
-  // });
-
+  it('post a new product item', () => {
+    let testObj = { categoryName:'food',name: 'apple', price: 25, quantityInStock: 200 };
+    return mockRequest.post('/api/v1/products')
+      .send(testObj)
+      .then(data => {
+        let record = data.body;
+        Object.keys(testObj).forEach(key => {
+          expect(record[key]).toEqual(testObj[key]);
+        });
+      });
+  });
   it('get one product item', () => {
     let testObj = { categoryName:'food', name: 'apple', price: 25, quantityInStock: 200 };
     return mockRequest.post('/api/v1/products')
@@ -55,19 +53,18 @@ it('respond properly to a delete request to /api/v1/products/:id', () => {
         });
     });
 });
-
-// it('respond properly to a update request to /api/v1/products/:id', () => {
-//   let obj = { categoryName:'food',name: 'apple', price: 25, quantityInStock: 200 };
-//   return mockRequest.post('/api/v1/products')
-//     .send(obj)
-//     .then(data=>{
-//       return mockRequest.put(`/api/v1/products/${data.body._id}`)
-//         .send({ categoryName:'food',name: 'Item is UPDATED', price: 10, quantityInStock: 999})
-//         .then(results=>{
-//           expect(results.status).toBe(200);
-//           expect(results.body.name).toEqual('Item is UPDATED');
-//           expect(results.body.price).toEqual(10);
-//           expect(results.body.quantityInStock).toEqual(999);
-//         });
-//     });
-// });
+it('respond properly to a update request to /api/v1/products/:id', () => {
+  let obj = { categoryName:'food',name: 'apple', price: 25, quantityInStock: 200 };
+  return mockRequest.post('/api/v1/products')
+    .send(obj)
+    .then(data=>{
+      return mockRequest.put(`/api/v1/products/${data.body._id}`)
+        .send({ categoryName:'food',name: 'Item is UPDATED', price: 10, quantityInStock: 999})
+        .then(results=>{
+          expect(results.status).toBe(200);
+          expect(results.body.name).toEqual('Item is UPDATED');
+          expect(results.body.price).toEqual(10);
+          expect(results.body.quantityInStock).toEqual(999);
+        });
+    });
+});

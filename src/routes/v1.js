@@ -24,9 +24,13 @@ function getModel(req,res,next){
     return;
   }
 }
+
 // specific for model data
+
 router.param('model', getModel);
+
 // custom REST Methods
+
 router.get('/api/v1/:model',handelGetAll);
 router.post('/api/v1/:model',handelPost);
 router.get('/api/v1/:model/:id',handelGetOne);
@@ -35,6 +39,7 @@ router.delete('/api/v1/:model/:id',handelDelete);
 
 
 // custom functions of REST Methods
+
 function handelGetAll(req,res,next){
   req.model.get()
     .then(results=>{

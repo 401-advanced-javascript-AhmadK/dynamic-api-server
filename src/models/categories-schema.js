@@ -2,28 +2,26 @@
 
 const mongoose = require('mongoose');
 
-require('./categories-schema.js');
+require('./products-schema.js');
 
-const products = mongoose.Schema({
-  categoryName: {type:String, required: true},
+const categoriesSchema = mongoose.Schema({
   name: {type:String, required: true},
-  price: { type: Number, required: true },
-  weight: { type: Number},
-  quantityInStock: {type: Number, required: true},
-},{toObject:{ virtuals: true }, toJSON: { virtuals: true }});
+  description: {type:String},
+},{toObject:{virtuals: true}, toJSON: {virtuals: true}});
 
-products.virtual('actualCategory',{
-  ref: 'categories',
-  localField: 'categoryName',
-  foreignField: 'name',
+categoriesSchema.virtual('actualProducts',{
+  ref: 'products',
+  localField: 'name',
+  foreignField: 'categoryName',
   justOne: false,
 });
 
-products.pre('findOne', function (){
+categoriesSchema.pre('findOne', function (){
   try{
-    this.populate('actualCategory');
+    this.populate('actualProducts');
   }catch(e){
     console.error(e);
   }
 });
-module.exports = mongoose.model('products',products);
+
+module.exports = mongoose.model('categories',categoriesSchema);

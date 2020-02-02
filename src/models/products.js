@@ -1,9 +1,8 @@
-  
 'use strict';
 
-const schema = require('./products-schema.js');
+const scheama = require('./products-schema.js');
 const Model = require('./model.js');
 
 class Products extends Model{}
 
-module.exports = new Products(schema);
+module.exports = new Products(scheama);
