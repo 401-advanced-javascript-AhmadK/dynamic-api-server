@@ -1,13 +1,14 @@
-# LAB - Class 09
+# LAB - Class 10
 
-## Dynamic Api Server
+## Final Api Server
 
 ### Author: Ahmad K. Al-Mahasneh 
 
 ### Links and Resources
 
-- [submission PR](https://github.com/401-advanced-javascript-AhmadK/dynamic-api-server/pull/1)
+- [submission PR](https://github.com/401-advanced-javascript-AhmadK/dynamic-api-server/pull/2)
 - [ci/cd](https://github.com/401-advanced-javascript-AhmadK/dynamic-api-server/actions) (GitHub Actions)
+- [back-end server url](http://xyz.com) (when applicable)
 
 ### Setup
 
