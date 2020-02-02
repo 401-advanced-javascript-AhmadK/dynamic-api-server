@@ -6,8 +6,8 @@
 
 ### Links and Resources
 
-- [submission PR](http://xyz.com)
-- [ci/cd](http://xyz.com) (GitHub Actions)
+- [submission PR](https://github.com/401-advanced-javascript-AhmadK/dynamic-api-server/pull/1)
+- [ci/cd](https://github.com/401-advanced-javascript-AhmadK/dynamic-api-server/actions) (GitHub Actions)
 
 ### Setup
 
