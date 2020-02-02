@@ -8,7 +8,7 @@
 
 - [submission PR](https://github.com/401-advanced-javascript-AhmadK/dynamic-api-server/pull/2)
 - [ci/cd](https://github.com/401-advanced-javascript-AhmadK/dynamic-api-server/actions) (GitHub Actions)
-- [back-end server url](http://xyz.com) (when applicable)
+- [back-end server url](https://dynamic-api-server.herokuapp.com/) (when applicable)
 
 ### Setup
 
